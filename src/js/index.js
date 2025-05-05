@@ -49,7 +49,7 @@ function checkForMatch() {
 
 function checkForWin() {
     if (matchedCards.length === cards.length) {
-        messageElement.textContent = 'Você venceu!';
+        messageElement.textContent = 'Você venceu! Obrigado pela atenção! Alunos: William e Mayra.';
     }
 }
 
