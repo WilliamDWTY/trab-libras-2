@@ -1,0 +1,74 @@
+/* Layout base para telas maiores (semelhante ao original) */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 110px);
+    grid-gap: 10px;
+    margin-top: 20px;
+    width: 460px; /* Largura total do container (4 * 110px + 3 * 10px de gap) */
+    margin-left: auto;
+    margin-right: auto; /* Centraliza o container em telas maiores */
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+}
+
+/* Para telas menores (tablets com largura máxima de 768px) */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* Adapta o número de colunas */
+        grid-gap: 8px;
+        margin-top: 15px;
+        width: auto; /* O container ocupa a largura da tela */
+        padding: 0 10px; /* Adiciona um pouco de padding nas laterais */
+    }
+
+    .card {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+/* Para telas ainda menores (celulares com largura máxima de 480px) */
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(75px, 1fr)); /* Mais adaptação */
+        grid-gap: 6px;
+        margin-top: 10px;
+        padding: 0 5px;
+    }
+
+    .card {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+/* Ajustes para telas um pouco maiores que o layout base */
+@media (min-width: 769px) and (max-width: 991px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 100px);
+        grid-gap: 10px;
+        width: 430px;
+    }
+
+    .card {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Para telas de desktop maiores */
+@media (min-width: 992px) {
+    .grid-container {
+        width: 500px; /* Ou um valor maior se desejar */
+        grid-template-columns: repeat(4, 115px);
+        grid-gap: 12px;
+    }
+
+    .card {
+        width: 115px;
+        height: 115px;
+    }
+}
